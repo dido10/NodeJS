@@ -1,0 +1,24 @@
+const http=require("http")
+//installing packages; express,bootstrap,jquery,socket.io 
+
+const express=require('express')
+//define express module to app
+const app=express()
+//create server
+const server=http.createServer(app)
+//const io=require('socket.io').listen(server) -->this is the real code,but it didnt work
+//below, it works!!!
+const io=require('socket.io')(server)
+
+app.get("/",function(request,response){
+
+    response.send("selam")
+})
+
+server.listen(8000,function() { 
+
+    console.log("server starts")
+})
+----
+//cls; clean the terminal 
+//npm init - y; view the package structure and content
